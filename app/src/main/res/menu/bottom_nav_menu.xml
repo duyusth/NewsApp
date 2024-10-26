@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/baseline_home_24"
+        android:title="Home" />
+    <item
+        android:id="@+id/navigation_video"
+        android:icon="@drawable/baseline_video_label_24"
+        android:title="Video" />
+<!--    <item-->
+<!--        android:id="@+id/navigation_notification"-->
+<!--        android:icon="@drawable/baseline_forward_to_inbox_24"-->
+<!--        android:title="Notification" />-->
+    <item
+        android:id="@+id/navigation_game"
+        android:icon="@drawable/baseline_videogame_asset_24"
+        android:title="Game" />
+
+
+</menu>
