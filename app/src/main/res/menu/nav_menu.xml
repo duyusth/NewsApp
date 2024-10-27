@@ -11,15 +11,15 @@
         android:title="Lịch sử"
         android:icon="@drawable/baseline_history_24" />
 
-    <item
-        android:id="@+id/nav_tin_gan_sao"
-        android:title="Tin gần sao"
-        android:icon="@drawable/baseline_star_24" />
+<!--    <item-->
+<!--        android:id="@+id/nav_tin_gan_sao"-->
+<!--        android:title="Tin gần sao"-->
+<!--        android:icon="@drawable/baseline_star_24" />-->
 
-    <item
-        android:id="@+id/nav_doc_sau"
-        android:title="Đọc sau"
-        android:icon="@drawable/baseline_watch_later_24" />
+<!--    <item-->
+<!--        android:id="@+id/nav_doc_sau"-->
+<!--        android:title="Đọc sau"-->
+<!--        android:icon="@drawable/baseline_watch_later_24" />-->
 
 
             <item

@@ -20,4 +20,9 @@
         android:id="@+id/navigation_game"
         android:name="com.example.newsapp.game.GameFragment"
         android:label="Game"/>
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.example.newsapp.news.HistoryFragment"
+        android:label="Lịch sử" />
+
 </navigation>

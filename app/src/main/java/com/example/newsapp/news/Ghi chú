@@ -1,0 +1,48 @@
+I. Cấu trúc
+ApiClient: Đây có thể là nơi bạn tạo instance của Retrofit để gọi API.
+
+Article: Lớp dữ liệu (data class) chứa thông tin về một bài báo
+ví dụ như tiêu đề, nội dung, tác giả.
+
+DetailActivity: Màn hình chi tiết để hiển thị thông tin chi tiết của một bài báo khi
+người dùng bấm vào.
+
+HistoryFragment: Fragment để hiển thị lịch sử đọc báo của người dùng.
+
+HistoryManager: Quản lý lịch sử đọc báo, có thể lưu và truy xuất các bài báo đã đọc.
+
+HomeFragment: Fragment chính, có thể là nơi hiển thị danh sách các bài báo mới nhất từ API.
+
+NewsAdapter: Adapter để kết nối dữ liệu (các bài báo) với RecyclerView trong HomeFragment
+ hoặc các nơi khác.
+
+NewsApiService: Interface để định nghĩa các hàm gọi API qua Retrofit
+(như đã thấy trong ví dụ ở trên).
+
+NewsResponse: Lớp mô hình (data class) để chứa phản hồi (response) từ API
+có thể chứa một danh sách các bài báo.
+
+Source: Một lớp dữ liệu (data class) để chứa thông tin về nguồn tin tức của bài báo,
+ví dụ như tên báo hay nhà xuất bản.
+
+II. Đặc điểm kotlin
+1.
+Trong Kotlin, data class là một loại class đặc biệt được sử dụng chủ yếu để chứa dữ liệu. So với các lớp thông thường, data class tự động cung cấp nhiều tính năng mà bạn không cần phải viết thủ công.
+
+Khi bạn khai báo một data class, Kotlin tự động sinh ra các hàm sau:
+
+toString(): Để hiển thị thông tin về đối tượng theo định dạng chuỗi (rất hữu ích khi in log).
+equals() và hashCode(): Để so sánh hai đối tượng và sử dụng chúng trong các cấu trúc như Set hoặc HashMap.
+copy(): Để tạo bản sao của đối tượng nhưng có thể thay đổi một số giá trị.
+componentN(): Dùng để truy xuất từng thuộc tính riêng lẻ của đối tượng (ví dụ component1() trả về thuộc tính đầu tiên, component2() trả về thuộc tính thứ hai,...).
+
+2.
+Trong Kotlin, val là từ khóa dùng để khai báo một biến bất biến (immutable), có nghĩa là giá trị của biến không thể thay đổi sau khi đã được gán lần đầu. Nó tương tự như từ khóa final trong Java.
+
+val name = "John"  // name không thể thay đổi sau khi đã gán
+var age = 25       // age có thể thay đổi giá trị
+
+val: Biến chỉ được gán giá trị một lần duy nhất và không thể thay đổi sau đó.
+var: Biến có thể được thay đổi giá trị sau khi gán.
+
+3.

@@ -7,5 +7,4 @@ data class VideoFile(
     val with: Int,
     val height: Int,
     val link: String,
-
 )

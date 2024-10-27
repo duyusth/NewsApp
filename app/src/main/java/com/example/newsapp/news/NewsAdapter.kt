@@ -13,6 +13,7 @@ import com.example.newsapp.R
 
 class NewsAdapter(private val context: Context, private var articles: List<Article>) :
     RecyclerView.Adapter<NewsAdapter.NewsViewHolder>(){
+    private val historyManager = HistoryManager(context) // Khởi tạo HistoryManager
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.item_news, parent, false);
@@ -43,6 +44,8 @@ class NewsAdapter(private val context: Context, private var articles: List<Artic
             val intent = Intent(context, DetailActivity::class.java)
             // Truyen du lieu bai bao sang Detail Activity
             intent.putExtra("url", article.url)
+            historyManager.addToHistory(article)
+
             context.startActivity(intent)
 
         }
