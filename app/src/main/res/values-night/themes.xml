@@ -1,7 +1,15 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.NewsApp" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+    <!-- Base application theme for Dark Mode -->
+    <style name="Theme.NewsApp.Dark" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Màu chính và màu phụ cho dark mode -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <!-- Background, text, button và hint colors cho dark mode -->
+        <item name="android:windowBackground">@color/backgroundColorDark</item> <!-- Nền cho dark mode -->
+        <item name="android:textColor">@color/textColorDark</item> <!-- Màu chữ dark mode -->
+        <item name="android:colorButtonNormal">@color/buttonColorDark</item> <!-- Màu cho button dark mode -->
+        <item name="android:textColorHint">@color/hintColorDark</item> <!-- Màu hint cho dark mode -->
     </style>
 </resources>

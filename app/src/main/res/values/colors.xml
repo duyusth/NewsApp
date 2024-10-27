@@ -1,8 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="colorPrimary">#FF6200EE</color>
-    <color name="colorGray">#FFB0BEC5</color>
-    <color name="colorBlue">#E3F2FD</color>
+    <!-- Màu chính, phiên bản nhạt -->
+    <color name="colorPrimary">#BB86FC</color> <!-- Nhạt hơn so với màu tím đậm hiện tại -->
+    <color name="purple_700">#9575CD</color> <!-- Nhạt hơn so với màu tím đậm -->
+    <color name="white">#FFFFFF</color> <!-- Màu trắng giữ nguyên -->
+    <color name="black">#000000</color> <!-- Màu đen giữ nguyên -->
+
+    <!-- Light Mode Colors (Chế độ sáng) -->
+    <color name="backgroundColorLight">#FAFAFA</color> <!-- Nhạt hơn màu nền sáng -->
+    <color name="textColorLight">#333333</color> <!-- Chữ đen nhẹ hơn một chút -->
+    <color name="buttonColorLight">#9FA8DA</color> <!-- Màu nút sáng nhạt hơn -->
+    <color name="hintColorLight">#BDBDBD</color> <!-- Màu gợi ý nhạt hơn -->
+
+    <!-- Dark Mode Colors (Chế độ tối) -->
+    <color name="backgroundColorDark">#1E1E1E</color> <!-- Màu nền tối nhạt hơn -->
+    <color name="textColorDark">#EEEEEE</color> <!-- Chữ trắng nhưng nhẹ hơn một chút -->
+    <color name="buttonColorDark">#D1C4E9</color> <!-- Nút trong chế độ tối, nhạt hơn -->
+    <color name="hintColorDark">#CFD8DC</color> <!-- Màu gợi ý tối nhạt hơn -->
+
+    <!-- Màu cho SwipeRefreshLayout -->
+    <color name="swipeRefreshColor">#BB86FC</color> <!-- Màu nhạt hơn cho SwipeRefreshLayout -->
+    <color name="gray">#B0BEC5</color> <!-- Màu xám nhạt hơn một chút -->
 </resources>

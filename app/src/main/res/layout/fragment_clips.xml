@@ -1,6 +1,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/black"> <!-- Sử dụng windowBackground để đổi nền theo chế độ dark/light -->
 
     <!-- ViewPager2 để hiển thị các clip -->
     <androidx.viewpager2.widget.ViewPager2

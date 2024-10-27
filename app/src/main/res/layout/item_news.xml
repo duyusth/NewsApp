@@ -5,16 +5,14 @@
     android:layout_margin="15dp"
     android:elevation="4dp"
     app:cardCornerRadius="15dp"
-    app:cardBackgroundColor="#E8F5E9"
-    >
+    app:cardBackgroundColor="@color/backgroundColorLight"> <!-- Sử dụng màu từ colors.xml -->
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="12dp"
-        android:background="@color/colorGray"
-        >
+        android:background="@color/gray">
 
         <!-- Tiêu đề tin tức -->
         <TextView
@@ -23,10 +21,10 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textSize="20sp"
-            android:textColor="@android:color/black"
-            android:maxLines="2"
-            android:ellipsize="end"
-            android:paddingBottom="4dp"/>
+            android:textColor="@color/textColorLight"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:paddingBottom="4dp"/>
 
         <!-- Mô tả tin tức -->
         <TextView
@@ -34,10 +32,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="16sp"
-            android:textColor="@android:color/black"
-            android:maxLines="3"
-            android:ellipsize="end"
-            android:paddingBottom="4dp" />
+            android:textColor="@color/textColorLight"
+        android:maxLines="3"
+        android:ellipsize="end"
+        android:paddingBottom="4dp" />
 
         <!-- Nguồn tin tức -->
         <TextView

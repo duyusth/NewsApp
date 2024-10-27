@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.annotation.NonNull
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.widget.Toolbar
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -63,12 +64,27 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_thoat -> {
                     signOutUser()
                 }
+//                R.id.dark_mode -> {
+//                    toggleDarkMode()
+//                }
             }
             // Đóng Navigation Drawer sau khi chọn
             drawerLayout.closeDrawers()
             true
         }
     }
+
+//    private fun toggleDarkMode() {
+//        val currentNightMode = resources.configuration.uiMode and android.content.res.Configuration.UI_MODE_NIGHT_MASK
+//        if (currentNightMode == android.content.res.Configuration.UI_MODE_NIGHT_YES) {
+//            // Chuyển sang chế độ Light Mode
+//            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+//        } else {
+//            // Chuyển sang chế độ Dark Mode
+//            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+//        }
+//    }
+
 
     private fun signOutUser() {
         // Dang xuat khoi firebase

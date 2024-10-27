@@ -27,8 +27,8 @@
                 android:title="Cài đặt"
                 android:icon="@drawable/baseline_settings_24" />
     <item
-                android:id="@+id/nav_gui_y_kien"
-                android:title="Gửi ý kiến"
+                android:id="@+id/dark_mode"
+                android:title="Dark Mode"
                 android:icon="@drawable/baseline_share_24" />
 
 
