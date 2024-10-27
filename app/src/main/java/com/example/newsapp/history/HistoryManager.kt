@@ -1,7 +1,8 @@
-package com.example.newsapp.news
+package com.example.newsapp.history
 
 import android.content.Context
 import android.content.SharedPreferences
+import com.example.newsapp.news.Article
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 

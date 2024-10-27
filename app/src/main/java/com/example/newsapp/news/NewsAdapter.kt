@@ -9,11 +9,24 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.newsapp.history.HistoryManager
 import com.example.newsapp.R
 
-class NewsAdapter(private val context: Context, private var articles: List<Article>) :
+//NewsAdapter là một RecyclerView.Adapter kết nối dữ liệu danh sách bài báo (articles) với giao diện người dùng.
+//Nó hiển thị từng bài báo trong RecyclerView và sử dụng Glide để tải ảnh từ URL.
+//Khi người dùng nhấp vào một bài báo, ứng dụng sẽ mở màn hình chi tiết và thêm bài báo vào lịch sử đọc.
+
+class NewsAdapter(private val context: Context, private var articles: List<Article>) : // tham số là context và danh sách các bài báo
     RecyclerView.Adapter<NewsAdapter.NewsViewHolder>(){
-    private val historyManager = HistoryManager(context) // Khởi tạo HistoryManager
+
+    private val historyManager = HistoryManager(context) // Khởi tạo HistoryManager, sử dụng trong phần history
+
+    class NewsViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
+        val title: TextView = itemView.findViewById(R.id.newsTitle);
+        val description: TextView = itemView.findViewById(R.id.newsDescription);
+        val source: TextView = itemView.findViewById(R.id.newsSource);
+        val imageView: ImageView = itemView.findViewById(R.id.newsImage)
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.item_news, parent, false);
@@ -50,10 +63,39 @@ class NewsAdapter(private val context: Context, private var articles: List<Artic
 
         }
     }
-    class NewsViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
-        val title: TextView = itemView.findViewById(R.id.newsTitle);
-        val description: TextView = itemView.findViewById(R.id.newsDescription);
-        val source: TextView = itemView.findViewById(R.id.newsSource);
-        val imageView: ImageView = itemView.findViewById(R.id.newsImage)
-    }
+
 }
+
+// 8. Lớp NewsViewHolder:
+//NewsViewHolder: Lớp này chứa các view thành phần của từng item (bài báo) trong danh sách.
+//Nó lấy các thành phần giao diện từ file layout item_news.xml bằng phương thức findViewById():
+//title: Hiển thị tiêu đề của bài báo.
+//description: Hiển thị mô tả ngắn của bài báo.
+//source: Hiển thị nguồn của bài báo.
+//imageView: Hiển thị hình ảnh minh họa của bài báo.
+
+// 3. onCreateViewHolder():
+// Mục đích: Tạo ra ViewHolder, là nơi chứa view của từng item (bài báo) trong danh sách.
+//    LayoutInflater.from(context).inflate(...): Tạo view từ file layout item_news.xml, đây là giao diện của mỗi bài báo trong danh sách.
+//    NewsViewHolder(view): Khởi tạo một ViewHolder với view đã được tạo ra.
+
+//4. getItemCount(): Mục đích: Trả về số lượng bài báo có trong danh sách. Dữ liệu này đến từ danh sách articles.
+
+// 5. onBindViewHolder():
+//Mục đích: Gán dữ liệu từ Article vào các thành phần giao diện (TextView, ImageView,...) trong ViewHolder.
+//article = articles[position]: Lấy bài báo ở vị trí hiện tại trong danh sách.
+//holder.title.text = article.title: Gán tiêu đề của bài báo vào TextView tương ứng.
+//Tương tự, mô tả và nguồn cũng được gán vào các TextView khác trong holder.
+
+// 6. Hiển thị hình ảnh với Glide:
+
+//Mục đích: Sử dụng thư viện Glide để tải hình ảnh từ URL của bài báo (article.urlToImage) và hiển thị vào ImageView.
+// Glide.with(context).load(article.urlToImage).into(holder.imageView): Glide sẽ tải ảnh từ URL và gán vào ImageView.
+// Nếu urlToImage là null, thì ImageView sẽ được đặt giá trị mặc định (setImageResource(0)).
+
+// 7. Xử lý sự kiện khi nhấp vào item:
+//Mục đích: Khi người dùng nhấp vào một bài báo trong danh sách, ứng dụng sẽ mở màn hình chi tiết bài báo.
+//Tạo Intent: Khi người dùng nhấp vào một item, một Intent được tạo để mở DetailActivity.
+//Truyền dữ liệu: Dữ liệu bài báo (URL) được truyền sang DetailActivity bằng phương thức putExtra().
+//Lưu vào lịch sử: Bài báo sẽ được thêm vào lịch sử đọc bằng cách gọi historyManager.addToHistory(article).
+

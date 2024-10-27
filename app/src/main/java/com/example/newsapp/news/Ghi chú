@@ -1,29 +1,11 @@
 I. Cấu trúc
-ApiClient: Đây có thể là nơi bạn tạo instance của Retrofit để gọi API.
-
-Article: Lớp dữ liệu (data class) chứa thông tin về một bài báo
-ví dụ như tiêu đề, nội dung, tác giả.
-
-DetailActivity: Màn hình chi tiết để hiển thị thông tin chi tiết của một bài báo khi
-người dùng bấm vào.
-
-HistoryFragment: Fragment để hiển thị lịch sử đọc báo của người dùng.
-
-HistoryManager: Quản lý lịch sử đọc báo, có thể lưu và truy xuất các bài báo đã đọc.
-
-HomeFragment: Fragment chính, có thể là nơi hiển thị danh sách các bài báo mới nhất từ API.
-
-NewsAdapter: Adapter để kết nối dữ liệu (các bài báo) với RecyclerView trong HomeFragment
- hoặc các nơi khác.
-
-NewsApiService: Interface để định nghĩa các hàm gọi API qua Retrofit
-(như đã thấy trong ví dụ ở trên).
-
-NewsResponse: Lớp mô hình (data class) để chứa phản hồi (response) từ API
-có thể chứa một danh sách các bài báo.
-
-Source: Một lớp dữ liệu (data class) để chứa thông tin về nguồn tin tức của bài báo,
-ví dụ như tên báo hay nhà xuất bản.
+ApiClient (Kết nối API)
+NewsApiService (Định nghĩa các lệnh gọi API)
+NewsResponse (Cấu trúc dữ liệu phản hồi)
+Article và Source (Các model dữ liệu)
+NewsAdapter (Kết nối dữ liệu với giao diện)
+HomeFragment (Hiển thị danh sách bài báo)
+DetailActivity (Hiển thị chi tiết bài báo)
 
 II. Đặc điểm kotlin
 1.

@@ -1,4 +1,4 @@
-package com.example.newsapp.news
+package com.example.newsapp.history
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.newsapp.R
+import com.example.newsapp.news.NewsAdapter
 
 class HistoryFragment : Fragment() {
 
