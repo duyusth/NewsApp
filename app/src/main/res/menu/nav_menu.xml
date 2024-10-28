@@ -22,10 +22,10 @@
 <!--        android:icon="@drawable/baseline_watch_later_24" />-->
 
 
-            <item
-                android:id="@+id/nav_cai_dat"
-                android:title="Cài đặt"
-                android:icon="@drawable/baseline_settings_24" />
+<!--            <item-->
+<!--                android:id="@+id/nav_cai_dat"-->
+<!--                android:title="Cài đặt"-->
+<!--                android:icon="@drawable/baseline_settings_24" />-->
     <item
                 android:id="@+id/nav_gui_y_kien"
                 android:title="Gửi ý kiến"

@@ -30,10 +30,10 @@ class GameFragment : Fragment() {
 
         // Đảm bảo điều hướng xảy ra bên trong WebView
         gameWebView.webViewClient = WebViewClient()
-        webSettings.loadWithOverviewMode = true
-        webSettings.useWideViewPort = true
-        webSettings.setSupportZoom(true)
-        webSettings.builtInZoomControls = true
+        webSettings.loadWithOverviewMode = true // Điều chỉnh trang web sao cho vừa với màn hình
+        webSettings.useWideViewPort = true // Cho phép WebView mở rộng theo chiều rộng của trang
+        webSettings.setSupportZoom(true) // Hỗ trợ tính năng zoom cho WebView
+        webSettings.builtInZoomControls = true // Hiển thị nút điều khiển zoom (phóng to/thu nhỏ)
 
         return view
     }

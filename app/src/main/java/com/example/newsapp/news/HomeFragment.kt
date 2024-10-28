@@ -61,7 +61,6 @@ class HomeFragment : Fragment() {
 
         call.enqueue(object : Callback<NewsResponse> {
             override fun onResponse(call: Call<NewsResponse>, response: Response<NewsResponse>) {
-                // Kiểm tra nếu phản hồi thành công và có dữ liệu
                 if (response.isSuccessful && response.body() != null) {
                     // Cập nhật danh sách bài báo từ phản hồi
                     articles = response.body()!!.articles
@@ -73,8 +72,6 @@ class HomeFragment : Fragment() {
                 }
                 swipeRefreshLayout.isRefreshing = false
             }
-
-            // Xử lý khi có lỗi xảy ra trong quá trình gọi API
             override fun onFailure(call: Call<NewsResponse>, t: Throwable) {
                 Toast.makeText(context, "Error: ${t.message}", Toast.LENGTH_SHORT).show()
                 swipeRefreshLayout.isRefreshing = false
@@ -85,14 +82,14 @@ class HomeFragment : Fragment() {
 
 
 // 1. Khai báo lớp HomeFragment:
-//swipeRefreshLayout: Đối tượng này hỗ trợ tính năng kéo để làm mới dữ liệu (Swipe to refresh).
-//onCreateView: Khởi tạo giao diện cho Fragment.
-//3. onViewCreated: Khởi tạo các thành phần giao diện và cài đặt sự kiện.
-//swipeRefreshLayout: Được gán với SwipeRefreshLayout từ giao diện XML (R.id.swipeRefreshLayout), và được sử dụng để hiển thị vòng tròn tải dữ liệu khi làm mới.
-//recyclerView: Liên kết với RecyclerView trong giao diện (R.id.recyclerView), sau đó thiết lập layout theo dạng danh sách dọc với LinearLayoutManager.
-//Sự kiện SwipeRefreshLayout: Khi người dùng kéo xuống để làm mới, sự kiện này sẽ được kích hoạt và gọi hàm fetchNews() để tải dữ liệu mới.
-//Gọi fetchNews(): Lần đầu tiên khi Fragment được khởi tạo, phương thức này sẽ được gọi để tải dữ liệu ngay lập tức.
-//4.fetchNews(): Phương thức để gọi API và lấy danh sách bài báo.
+// swipeRefreshLayout: Đối tượng này hỗ trợ tính năng kéo để làm mới dữ liệu (Swipe to refresh).
+// onCreateView: Khởi tạo giao diện cho Fragment.
+// 3. onViewCreated: Khởi tạo các thành phần giao diện và cài đặt sự kiện.
+// swipeRefreshLayout: Được gán với SwipeRefreshLayout từ giao diện XML (R.id.swipeRefreshLayout), và được sử dụng để hiển thị vòng tròn tải dữ liệu khi làm mới.
+// recyclerView: Liên kết với RecyclerView trong giao diện (R.id.recyclerView), sau đó thiết lập layout theo dạng danh sách dọc với LinearLayoutManager.
+// Sự kiện SwipeRefreshLayout: Khi người dùng kéo xuống để làm mới, sự kiện này sẽ được kích hoạt và gọi hàm fetchNews() để tải dữ liệu mới.
+// Gọi fetchNews(): Lần đầu tiên khi Fragment được khởi tạo, phương thức này sẽ được gọi để tải dữ liệu ngay lập tức.
+// 4.fetchNews(): Phương thức để gọi API và lấy danh sách bài báo.
 // ApiClient.getClient(): Tạo một instance của Retrofit để gọi API.
 // create(NewsApiService::class.java): Tạo một instance của NewsApiService, trong đó định nghĩa các phương thức gọi API.
 // getTopHeadlines: Gọi API với apiKey và country (ví dụ: "us" cho Mỹ) để lấy danh sách các bài báo từ NewsAPI.
