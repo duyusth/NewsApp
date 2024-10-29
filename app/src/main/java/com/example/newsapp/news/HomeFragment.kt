@@ -68,12 +68,12 @@ class HomeFragment : Fragment() {
                     newsAdapter = NewsAdapter(requireContext(), articles)
                     recyclerView.adapter = newsAdapter
                 } else {
-                    Toast.makeText(context, "Failed to load news", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "Failed to load news", Toast.LENGTH_SHORT).show()
                 }
                 swipeRefreshLayout.isRefreshing = false
             }
             override fun onFailure(call: Call<NewsResponse>, t: Throwable) {
-                Toast.makeText(context, "Error: ${t.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Error: ${t.message}", Toast.LENGTH_SHORT).show()
                 swipeRefreshLayout.isRefreshing = false
             }
         })
